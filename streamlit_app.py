@@ -21,11 +21,15 @@ def make_prediction(tcm, rendimiento, toneladas_jugo):
 st.title("Predicción de Producción de Azúcar")
 
 # Entrada de datos
-tcm = st.number_input("Ingrese el valor de TCM")
-rendimiento = st.number_input("Ingrese el valor de Rendimiento")
-toneladas_jugo = st.number_input("Ingrese el valor de Toneladas de Jugo")
+tcm = st.number_input("Ingrese el valor de TCM", min_value=0.0, value=0.0)
+rendimiento = st.number_input("Ingrese el valor de Rendimiento", min_value=0.0, value=0.0)
+toneladas_jugo = st.number_input("Ingrese el valor de Toneladas de Jugo", min_value=0.0, value=0.0)
 
 # Botón para hacer la predicción
 if st.button("Realizar Predicción"):
-    result = make_prediction(tcm, rendimiento, toneladas_jugo)
-    st.write(f"La predicción de producción es: {result:.2f}")  # Mostrar la predicción
+    if tcm == 0 or rendimiento == 0 or toneladas_jugo == 0:
+        st.warning("Por favor, ingrese valores mayores a 0 en todos los campos.")
+    else:
+        result = make_prediction(tcm, rendimiento, toneladas_jugo)
+        st.write(f"La predicción de producción es: {result:.2f}")  # Mostrar la predicción
+
