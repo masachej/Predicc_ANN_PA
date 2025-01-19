@@ -44,4 +44,4 @@ if st.button("Realizar Predicción"):
         st.warning("Por favor, ingrese valores mayores a 0 en todos los campos.")
     else:
         result = make_prediction(tcm, rendimiento, toneladas_jugo)
-        st.write(f"La predicción de producción es: {result:.2f}")  # Mostrar la predicción
+        st.write(f"La predicción de producción es: {result:.2f} sacos de azucar")  # Mostrar la predicción
