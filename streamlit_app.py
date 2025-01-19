@@ -20,6 +20,17 @@ def make_prediction(tcm, rendimiento, toneladas_jugo):
 # Título de la app
 st.title("Predicción de Producción de Azúcar")
 
+# Texto explicativo sobre la utilidad del aplicativo
+st.write("""
+Este aplicativo permite predecir la producción de azúcar a partir de tres variables clave: TCM, Rendimiento y Toneladas de Jugo.
+La herramienta es útil para los profesionales en la industria azucarera, facilitando la toma de decisiones informadas basadas en datos.
+Ingrese los valores en los campos a continuación para obtener una estimación de la producción.
+""")
+
+st.write("""
+La predicción se realiza mediante un algoritmo de machine learning, utilizando una Red Neuronal Artificial (ANN) entrenada con datos históricos diarios de producción azucarera del Ingenio Azucarero Monterrey C.A, una industria Lojana.
+""")
+
 # Entrada de datos
 tcm = st.number_input("Ingrese el valor de TCM", min_value=0.0, value=0.0, step=0.01)
 rendimiento = st.number_input("Ingrese el valor de Rendimiento", min_value=0.0, value=0.0, step=0.01)
