@@ -26,11 +26,11 @@ Este aplicativo permite predecir la producción de azúcar a partir de tres vari
 La herramienta es útil para los profesionales en la industria azucarera, facilitando la toma de decisiones informadas basadas en datos.""")
 
 st.write("""
-La predicción se realiza mediante un algoritmo de machine learning, utilizando una Red Neuronal Artificial (ANN) entrenada con datos históricos diarios de producción azucarera del Ingenio Azucarero Monterrey C.A.
+La predicción se realiza mediante un algoritmo de machine learning, utilizando un algoritmo de Red Neuronal Artificial (ANN) entrenada con datos históricos diarios de producción azucarera del Ingenio Azucarero Monterrey C.A.
 """)
 
 st.write("""
-Ingrese los valores en los campos a continuación para obtener una estimación de la producción.
+Ingrese los valores en los campos a continuación para obtener una estimación de la producción de azucar en sacos.
 """)
 
 # Entrada de datos
