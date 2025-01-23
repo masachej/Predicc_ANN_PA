@@ -2,6 +2,7 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 import joblib  # Para cargar el escalador
+import os  # Para verificar la existencia del archivo
 
 # Cargar el modelo
 model = tf.keras.models.load_model('ANN_modelo_PPA.h5')
@@ -17,48 +18,32 @@ def make_prediction(tcm, rendimiento, toneladas_jugo):
     prediction = model.predict(data_scaled)  # Hacer la predicción
     return prediction[0][0]  # Devolver la predicción (único valor en la predicción)
 
-# Título principal centrado
-st.markdown(
-    """
-    <div style="text-align: center;">
-        <h1>MONTERREY AZUCARERA LOJANA</h1>
-        <h2>PREDICCIÓN DE LA PRODUCCIÓN DE AZÚCAR</h2>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+# Título principal
+st.title("MONTERREY AZUCARERA LOJANA")
 
-# Mostrar logo centrado
-col1, col2, col3 = st.columns([1, 3, 1])
-with col1:
-    st.write("")  # Espacio vacío
-with col2:
-    st.image("logom.png", use_container_width=True)  # Cambia "logo.png" por la ruta correcta
-with col3:
-    st.write("")  # Espacio vacío
+# Cargar el logo
+logo_path = "logo.png"  # Cambia a la ruta correcta si es necesario
+if os.path.exists(logo_path):
+    st.image(logo_path, use_container_width=True)
+else:
+    st.warning("El logo no se encontró. Asegúrate de que el archivo esté en el directorio correcto.")
+
+# Título secundario
+st.subheader("Predicción de la Producción de Azúcar")
 
 # Texto explicativo sobre la utilidad del aplicativo
-st.write(
-    """
-    Este aplicativo permite predecir la producción de azúcar a partir de tres variables clave: 
-    Toneladas Caña Molida (TCM), Rendimiento y Toneladas de Jugo. La herramienta es útil para los 
-    profesionales en la industria azucarera, facilitando la toma de decisiones informadas basadas en datos.
-    """
-)
+st.write("""
+Este aplicativo permite predecir la producción de azúcar a partir de tres variables clave: Toneladas Caña Molida (TCM), Rendimiento y Toneladas de Jugo.
+La herramienta es útil para los profesionales en la industria azucarera, facilitando la toma de decisiones informadas basadas en datos.
+""")
 
-st.write(
-    """
-    La predicción se realiza mediante un algoritmo de machine learning, utilizando un algoritmo 
-    de Red Neuronal Artificial (ANN) entrenada con datos históricos diarios de producción azucarera 
-    del Ingenio Azucarero Monterrey C.A.
-    """
-)
+st.write("""
+La predicción se realiza mediante un algoritmo de machine learning, utilizando un algoritmo de Red Neuronal Artificial (ANN) entrenada con datos históricos diarios de producción azucarera del Ingenio Azucarero Monterrey C.A.
+""")
 
-st.write(
-    """
-    Ingrese los valores en los campos a continuación para obtener una estimación de la producción de azúcar en sacos.
-    """
-)
+st.write("""
+Ingrese los valores en los campos a continuación para obtener una estimación de la producción de azúcar en sacos.
+""")
 
 # Entrada de datos
 tcm = st.number_input("Ingrese el valor de Toneladas Caña Molida (ton)", min_value=0.0, value=0.0, step=0.01)
