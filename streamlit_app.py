@@ -19,7 +19,7 @@ def make_prediction(tcm, rendimiento, toneladas_jugo):
     return prediction[0][0]  # Devolver la predicción (único valor en la predicción)
 
 # Cargar el logo
-logo_path = "logo.png"  # Cambia a la ruta correcta si es necesario
+logo_path = "logom.png"  # Cambia a la ruta correcta si es necesario
 if os.path.exists(logo_path):
     # Usamos HTML para centrar el logo
     st.markdown(
