@@ -19,11 +19,16 @@ def make_prediction(tcm, rendimiento, toneladas_jugo):
     return prediction[0][0]  # Devolver la predicción (único valor en la predicción)
 
 # Cargar el logo
-logo_path = "logom.png"  # Cambia a la ruta correcta si es necesario
+logo_path = "logo.png"  # Cambia a la ruta correcta si es necesario
 if os.path.exists(logo_path):
-    st.image(logo_path, width=300)  # Ajusta el tamaño del logo con el parámetro `width`
+    # Usamos HTML para centrar el logo
+    st.markdown(
+        f'<div style="text-align: center;"><img src="{logo_path}" width="300"></div>', 
+        unsafe_allow_html=True
+    )
 else:
     st.warning("El logo no se encontró. Asegúrate de que el archivo esté en el directorio correcto.")
+
 
 # Título principal
 st.title("MONTERREY AZUCARERA LOJANA")
