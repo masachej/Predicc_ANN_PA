@@ -46,7 +46,7 @@ La herramienta es útil para los profesionales e ingenieros azucareros de la emp
 """)
 
 st.write("""
-La predicción se realiza mediante un algoritmo de machine learning, utilizando un modelo de Red Neuronal Artificial (ANN) entrenada con datos históricos diarios de producción azucarera del Ingenio Azucarero Monterrey C.A.
+La predicción se realiza mediante un algoritmo de Machine Learning, utilizando un modelo de Red Neuronal Artificial (ANN) entrenada con datos históricos diarios de producción azucarera del Ingenio Azucarero Monterrey C.A.
 """)
 
 st.write("""
