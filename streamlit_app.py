@@ -17,18 +17,17 @@ def make_prediction(tcm, rendimiento, toneladas_jugo):
     prediction = model.predict(data_scaled)  # Hacer la predicción
     return prediction[0][0]  # Devolver la predicción (único valor en la predicción)
 
-# Verifica que el archivo de la imagen esté en la misma carpeta y sea el correcto
-logo_path = "logom.png"  # Asegúrate de reemplazar "logo.png" por el nombre real de tu imagen
-try:
-    st.image(logo_path, width=200)  # Muestra el logo, ajusta el ancho si es necesario
-except FileNotFoundError:
-    st.error("El logo no se pudo cargar. Asegúrate de que el archivo 'logo.png' esté en el directorio correcto.")
-
-# Título principal
-st.title("MONTERREY AZUCARERA LOJANA")
-
-# Segundo título más pequeño
-st.subheader("PREDICCIÓN DE LA PRODUCCIÓN DE AZÚCAR")
+# HTML para centrar el logo y los títulos
+st.markdown(
+    """
+    <div style="text-align: center;">
+        <img src="logo.png" alt="Logo" style="width: 200px;">
+        <h1>MONTERREY AZUCARERA LOJANA</h1>
+        <h2>PREDICCIÓN DE LA PRODUCCIÓN DE AZÚCAR</h2>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 # Texto explicativo sobre la utilidad del aplicativo
 st.write("""
@@ -55,3 +54,4 @@ if st.button("Realizar Predicción"):
     else:
         result = make_prediction(tcm, rendimiento, toneladas_jugo)
         st.write(f"La predicción de producción es: {result:.2f} sacos.")  # Mostrar la predicción
+
