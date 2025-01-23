@@ -34,8 +34,8 @@ if os.path.exists(logo_path):
 else:
     st.warning("El logo no se encontró. Asegúrate de que el archivo esté en el directorio correcto.")
 # Título principal
-st.title("MONTERREY AZUCARERA LOJANA C.A")
-
+st.subheader("MONTERREY AZUCARERA LOJANA")
+#st.title("MONTERREY AZUCARERA LOJANA")
 # Título secundario
 st.subheader("Predicción de la Producción de Azúcar")
 
