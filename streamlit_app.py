@@ -33,7 +33,7 @@ col1, col2, col3 = st.columns([1, 3, 1])
 with col1:
     st.write("")  # Espacio vacío
 with col2:
-    st.image("logo.png", use_container_width=True)  # Cambia "logo.png" por la ruta correcta
+    st.image("logom.png", use_container_width=True)  # Cambia "logo.png" por la ruta correcta
 with col3:
     st.write("")  # Espacio vacío
 
