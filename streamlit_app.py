@@ -33,10 +33,42 @@ col1, col2, col3 = st.columns([1, 3, 1])
 with col1:
     st.write("")  # Espacio vacío
 with col2:
-    st.image("logom.png", use_container_width=True)  # Cambia "logo.png" por la ruta correcta
+    st.image("logo.png", use_container_width=True)  # Cambia "logo.png" por la ruta correcta
 with col3:
     st.write("")  # Espacio vacío
 
 # Texto explicativo sobre la utilidad del aplicativo
-st.write("""
-Este aplicativo permite predecir la producción de azúcar a partir de tres variables clave: Toneladas Caña Molida (TCM), Rendimiento y Toneladas de
+st.write(
+    """
+    Este aplicativo permite predecir la producción de azúcar a partir de tres variables clave: 
+    Toneladas Caña Molida (TCM), Rendimiento y Toneladas de Jugo. La herramienta es útil para los 
+    profesionales en la industria azucarera, facilitando la toma de decisiones informadas basadas en datos.
+    """
+)
+
+st.write(
+    """
+    La predicción se realiza mediante un algoritmo de machine learning, utilizando un algoritmo 
+    de Red Neuronal Artificial (ANN) entrenada con datos históricos diarios de producción azucarera 
+    del Ingenio Azucarero Monterrey C.A.
+    """
+)
+
+st.write(
+    """
+    Ingrese los valores en los campos a continuación para obtener una estimación de la producción de azúcar en sacos.
+    """
+)
+
+# Entrada de datos
+tcm = st.number_input("Ingrese el valor de Toneladas Caña Molida (ton)", min_value=0.0, value=0.0, step=0.01)
+rendimiento = st.number_input("Ingrese el valor de Rendimiento (kg/TCM)", min_value=0.0, value=0.0, step=0.01)
+toneladas_jugo = st.number_input("Ingrese el valor de Toneladas de Jugo (ton)", min_value=0.0, value=0.0, step=0.01)
+
+# Botón para hacer la predicción
+if st.button("Realizar Predicción"):
+    if tcm == 0.0 or rendimiento == 0.0 or toneladas_jugo == 0.0:
+        st.warning("Por favor, ingrese valores mayores a 0 en todos los campos.")
+    else:
+        result = make_prediction(tcm, rendimiento, toneladas_jugo)
+        st.write(f"La predicción de producción es: {result:.2f} sacos.")  # Mostrar la predicción
