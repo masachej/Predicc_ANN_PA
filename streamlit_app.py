@@ -18,7 +18,7 @@ def make_prediction(tcm, rendimiento, toneladas_jugo):
     return prediction[0][0]  # Devolver la predicción (único valor en la predicción)
 
 # Verifica que el archivo de la imagen esté en la misma carpeta y sea el correcto
-logo_path = "logo.png"  # Asegúrate de reemplazar "logo.png" por el nombre real de tu imagen
+logo_path = "logom.png"  # Asegúrate de reemplazar "logo.png" por el nombre real de tu imagen
 try:
     st.image(logo_path, width=200)  # Muestra el logo, ajusta el ancho si es necesario
 except FileNotFoundError:
