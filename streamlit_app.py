@@ -21,7 +21,7 @@ def make_prediction(tcm, rendimiento, toneladas_jugo):
 # Cargar el logo
 logo_path = "logom.png"  # Cambia a la ruta correcta si es necesario
 if os.path.exists(logo_path):
-    st.image(logo_path, width=200)  # Ajusta el tamaño del logo con el parámetro `width`
+    st.image(logo_path, width=300)  # Ajusta el tamaño del logo con el parámetro `width`
 else:
     st.warning("El logo no se encontró. Asegúrate de que el archivo esté en el directorio correcto.")
 
