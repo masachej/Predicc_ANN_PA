@@ -19,9 +19,6 @@ def make_prediction(tcm, rendimiento, toneladas_jugo):
     prediction = model.predict(data_scaled)  # Hacer la predicción
     return prediction[0][0]  # Devolver la predicción (único valor en la predicción)
 
-# Título principal
-st.title("MONTERREY AZUCARERA LOJANA")
-
 # Cargar el logo
 logo_path = "logom.png"  # Cambia a la ruta correcta si es necesario
 if os.path.exists(logo_path):
@@ -36,6 +33,8 @@ if os.path.exists(logo_path):
     )
 else:
     st.warning("El logo no se encontró. Asegúrate de que el archivo esté en el directorio correcto.")
+# Título principal
+st.title("MONTERREY AZUCARERA LOJANA")
 
 # Título secundario
 st.subheader("Predicción de la Producción de Azúcar")
