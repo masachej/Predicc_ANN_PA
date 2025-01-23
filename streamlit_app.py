@@ -18,20 +18,19 @@ def make_prediction(tcm, rendimiento, toneladas_jugo):
     prediction = model.predict(data_scaled)  # Hacer la predicción
     return prediction[0][0]  # Devolver la predicción (único valor en la predicción)
 
+# Título principal
+st.title("MONTERREY AZUCARERA LOJANA")
+
 # Cargar el logo
-logo_path = "logom.png"  # Cambia a la ruta correcta si es necesario
+logo_path = "logo.png"  # Cambia a la ruta correcta si es necesario
 if os.path.exists(logo_path):
     # Usamos HTML para centrar el logo
     st.markdown(
-        f'<div style="text-align: center;"><img src="{logo_path}" width="300"></div>', 
+        f'<div style="text-align: center;"><img src="data:image/png;base64,{open(logo_path, "rb").read().encode("base64")}" width="300"></div>', 
         unsafe_allow_html=True
     )
 else:
     st.warning("El logo no se encontró. Asegúrate de que el archivo esté en el directorio correcto.")
-
-
-# Título principal
-st.title("MONTERREY AZUCARERA LOJANA")
 
 # Título secundario
 st.subheader("Predicción de la Producción de Azúcar")
@@ -47,18 +46,4 @@ La predicción se realiza mediante un algoritmo de machine learning, utilizando 
 """)
 
 st.write("""
-Ingrese los valores en los campos a continuación para obtener una estimación de la producción de azúcar en sacos.
-""")
-
-# Entrada de datos
-tcm = st.number_input("Ingrese el valor de Toneladas Caña Molida (ton)", min_value=0.0, value=0.0, step=0.01)
-rendimiento = st.number_input("Ingrese el valor de Rendimiento (kg/TCM)", min_value=0.0, value=0.0, step=0.01)
-toneladas_jugo = st.number_input("Ingrese el valor de Toneladas de Jugo (ton)", min_value=0.0, value=0.0, step=0.01)
-
-# Botón para hacer la predicción
-if st.button("Realizar Predicción"):
-    if tcm == 0.0 or rendimiento == 0.0 or toneladas_jugo == 0.0:
-        st.warning("Por favor, ingrese valores mayores a 0 en todos los campos.")
-    else:
-        result = make_prediction(tcm, rendimiento, toneladas_jugo)
-        st.write(f"La predicción de producción es: {result:.2f} sacos.")  # Mostrar la predicción
+Ingrese los valores en los campos a continuación para obtener una estimación de la producción 
