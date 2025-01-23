@@ -21,7 +21,7 @@ def make_prediction(tcm, rendimiento, toneladas_jugo):
 st.markdown(
     """
     <div style="text-align: center;">
-        <img src="logo.png" alt="Logo" style="width: 200px;">
+        <img src="logom.png" alt="Logo" style="width: 200px;">
         <h1>MONTERREY AZUCARERA LOJANA</h1>
         <h2>PREDICCIÓN DE LA PRODUCCIÓN DE AZÚCAR</h2>
     </div>
