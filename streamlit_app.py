@@ -3,6 +3,7 @@ import tensorflow as tf
 import numpy as np
 import joblib  # Para cargar el escalador
 import os  # Para verificar la existencia del archivo
+import base64  # Para codificar la imagen en base64
 
 # Cargar el modelo
 model = tf.keras.models.load_model('ANN_modelo_PPA.h5')
@@ -24,9 +25,13 @@ st.title("MONTERREY AZUCARERA LOJANA")
 # Cargar el logo
 logo_path = "logom.png"  # Cambia a la ruta correcta si es necesario
 if os.path.exists(logo_path):
-    # Usamos HTML para centrar el logo
+    # Codificar la imagen en base64
+    with open(logo_path, "rb") as image_file:
+        encoded_image = base64.b64encode(image_file.read()).decode('utf-8')
+    
+    # Usar HTML para centrar el logo
     st.markdown(
-        f'<div style="text-align: center;"><img src="data:image/png;base64,{open(logo_path, "rb").read().encode("base64")}" width="300"></div>', 
+        f'<div style="text-align: center;"><img src="data:image/png;base64,{encoded_image}" width="300"></div>', 
         unsafe_allow_html=True
     )
 else:
