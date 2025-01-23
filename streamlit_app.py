@@ -17,11 +17,19 @@ def make_prediction(tcm, rendimiento, toneladas_jugo):
     prediction = model.predict(data_scaled)  # Hacer la predicción
     return prediction[0][0]  # Devolver la predicción (único valor en la predicción)
 
-# HTML para centrar el logo y los títulos
+# Mostrar logo centrado con `st.image`
+col1, col2, col3 = st.columns([1, 3, 1])
+with col1:
+    st.write("")  # Espacio vacío
+with col2:
+    st.image("logo.png", use_column_width=True)  # Cambia "logo.png" por la ruta correcta
+with col3:
+    st.write("")  # Espacio vacío
+
+# Mostrar títulos centrados
 st.markdown(
     """
     <div style="text-align: center;">
-        <img src="logom.png" alt="Logo" style="width: 200px;">
         <h1>MONTERREY AZUCARERA LOJANA</h1>
         <h2>PREDICCIÓN DE LA PRODUCCIÓN DE AZÚCAR</h2>
     </div>
