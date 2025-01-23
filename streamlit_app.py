@@ -42,11 +42,11 @@ st.subheader("Predicción de la Producción de Azúcar")
 # Texto explicativo sobre la utilidad del aplicativo
 st.write("""
 Este aplicativo permite predecir la producción de azúcar a partir de tres variables clave: Toneladas Caña Molida (TCM), Rendimiento y Toneladas de Jugo.
-La herramienta es útil para los profesionales en la industria azucarera, facilitando la toma de decisiones informadas basadas en datos.
+La herramienta es útil para los profesionales e ingenieros azucareros de la empresa, facilitando la toma de decisiones informadas basadas en datos.
 """)
 
 st.write("""
-La predicción se realiza mediante un algoritmo de machine learning, utilizando un algoritmo de Red Neuronal Artificial (ANN) entrenada con datos históricos diarios de producción azucarera del Ingenio Azucarero Monterrey C.A.
+La predicción se realiza mediante un algoritmo de machine learning, utilizando un modelo de Red Neuronal Artificial (ANN) entrenada con datos históricos diarios de producción azucarera del Ingenio Azucarero Monterrey C.A.
 """)
 
 st.write("""
