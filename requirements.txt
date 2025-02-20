@@ -1,4 +1,6 @@
 streamlit
-pyGAM
-joblib
+tensorflow
+scikit-learn
+pandas
+pygam
 numpy
